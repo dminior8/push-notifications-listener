@@ -1,0 +1,13 @@
+services:
+  push-notifications-listener:
+    build:
+      context: .
+    container_name: push-notifications-listener
+    networks:
+      - notifications-service_app-network
+    ports:
+      - "8082:8082"
+
+networks:
+  notifications-service_app-network:
+    external: true
